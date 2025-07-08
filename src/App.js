@@ -3,6 +3,7 @@ import './App.css';
 import CarList from './components/CarList';
 import CarForm from './components/CarForm';
 import CarFilter from './components/CarFilter';
+import CarSorting from './components/CarSorting';
 
 // Main App Component - Demonstrates:
 // - Functional Components
@@ -14,6 +15,7 @@ function App() {
   // State management using useState hook
   const [cars, setCars] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
+  const [sortedCars, setSortedCars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -31,6 +33,11 @@ function App() {
   useEffect(() => {
     setFilteredCars(cars);
   }, [cars]);
+
+  // useEffect to reset sorted cars when filtered cars change
+  useEffect(() => {
+    setSortedCars([]);
+  }, [filteredCars]);
 
   // API Functions - Demonstrates async/await and error handling
   const fetchCars = async () => {
@@ -125,6 +132,10 @@ function App() {
     setFilteredCars(filtered);
   };
 
+  const handleSortCars = (sorted) => {
+    setSortedCars(sorted);
+  };
+
   // Conditional rendering - showing different UI based on state
   if (isLoading) {
     return <div className="loading">Loading cars...</div>;
@@ -169,8 +180,13 @@ function App() {
               onFilter={handleFilterCars} 
             />
 
+            <CarSorting 
+              cars={filteredCars} 
+              onSort={handleSortCars} 
+            />
+
             <CarList
-              cars={filteredCars}
+              cars={sortedCars.length > 0 ? sortedCars : filteredCars}
               onEdit={handleEditCar}
               onDelete={deleteCar}
             />
