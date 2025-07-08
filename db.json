@@ -1,0 +1,59 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "brand": "Toyota",
+      "model": "Camry",
+      "year": 2022,
+      "color": "Blue",
+      "price": 28000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "mileage": 10000
+    },
+    {
+      "id": 2,
+      "brand": "Honda",
+      "model": "Civic",
+      "year": 2023,
+      "color": "Red",
+      "price": 25000,
+      "fuelType": "Gasoline",
+      "transmission": "Manual",
+      "mileage": 15000
+    },
+    {
+      "id": 3,
+      "brand": "Tesla",
+      "model": "Model 3",
+      "year": 2023,
+      "color": "White",
+      "price": 45000,
+      "fuelType": "Electric",
+      "transmission": "Automatic",
+      "mileage": 20000
+    },
+    {
+      "id": 4,
+      "brand": "Ford",
+      "model": "Mustang",
+      "year": 2021,
+      "color": "Black",
+      "price": 35000,
+      "fuelType": "Gasoline",
+      "transmission": "Manual",
+      "mileage": 25000
+    },
+    {
+      "id": 5,
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2022,
+      "color": "Silver",
+      "price": 60000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "mileage": 30000
+    }
+  ]
+} 
